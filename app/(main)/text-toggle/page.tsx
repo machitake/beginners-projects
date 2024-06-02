@@ -1,20 +1,18 @@
 "use client"
 import { useState } from "react";
+import { textToggleText } from "./custonHook";
 
 const textToggle = () => {
-  const [isHidden, setIsHidden] = useState(false);
+
+  const {
+    isHidden,
+    handleDisplay,
+    handleDisplayOff,
+  } = textToggleText();
 
   // const handleChange = () => {
   //   setIsHidden(!isHidden);
   // }
-
-  const handleDisplay = () => {
-    setIsHidden(false)
-  }
-
-  const handleDisplayOff = () => {
-    setIsHidden(true)
-  }
 
   return (
     <div className="mx-auto mt-10 max-w-4xl">
