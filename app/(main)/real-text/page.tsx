@@ -1,12 +1,13 @@
 "use client";
 import { NextPage } from 'next'
-import { ChangeEvent, useState } from 'react';
+import { UseRealText } from "./customHook";
 
-const RealText: NextPage = () => {
-  const [text, setText] = useState("ここのテキストが切り替わります");
-  const handleInput = (e: ChangeEvent<HTMLInputElement>) => {
-    setText(e.target.value);
-  }
+const RealtimeText: NextPage = () => {
+
+  const {
+    text,
+    handleInput,
+  } = UseRealText();
 
   return (
     <div className="mx-auto mt-10 max-w-4xl">
@@ -25,4 +26,4 @@ const RealText: NextPage = () => {
   )
 }
 
-export default RealText
+export default RealtimeText
