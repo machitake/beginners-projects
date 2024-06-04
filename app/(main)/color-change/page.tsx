@@ -1,14 +1,13 @@
 "use client"
 import { NextPage } from 'next'
-import { useState } from 'react'
+import { useRandomColorText } from './customHook'
 
 const RandomColor: NextPage = () => {//NextPageはNext.jsの宣言
-  const [color, setColor] = useState('gray');
-  const colors = ["lightblue", "lightgreen", " pink", "indigo", "green", "red", "slate", "gray", "orange", "yellow", "purple"];
-  const handleColorChange = () => {
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    setColor(randomColor);
-  }
+
+  const {
+    color,
+    handleColorChange,
+  } = useRandomColorText();
 
   return (
     <div className='h-screen pt-8' style={{ backgroundColor: color}}>
