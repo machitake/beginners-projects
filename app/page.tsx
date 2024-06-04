@@ -21,6 +21,11 @@ export default function Home() {
           リアルタイムテキスト
         </button>
       </Link>
+      <Link href="/color-change">
+        <button className="border-2 border-black px-3 py-2 rounded-lg bg-green-200">
+          ランダムカラー
+        </button>
+      </Link>
       </div>
     </div>
   );
