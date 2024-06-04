@@ -16,6 +16,11 @@ export default function Home() {
           テキスト表示切替
         </button>
       </Link>
+      <Link href="/real-text">
+        <button className="border-2 border-black px-3 py-2 rounded-lg bg-green-200">
+          リアルタイムテキスト
+        </button>
+      </Link>
       </div>
     </div>
   );
