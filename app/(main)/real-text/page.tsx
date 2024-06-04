@@ -1,6 +1,6 @@
 "use client";
 import { NextPage } from 'next'
-import { useState } from 'react';
+import { ChangeEvent, useState } from 'react';
 
 const RealText: NextPage = () => {
   const [text, setText] = useState("ここのテキストが切り替わります");
