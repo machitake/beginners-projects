@@ -1,24 +1,17 @@
 "use client"
 
 import { NextPage } from "next"
-import { ChangeEvent, useState } from "react";
+import { useSimpleMemoText } from "./customHook";
 
 const simpleMemo: NextPage = () => {
-  const[inputText, setInputText] = useState("");
-  const[memo, setMemo] = useState<string[]>([]);
-  const handleInputText = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setInputText(e.target.value);
-  }
 
-  const handleMemo = () => {
-    if(!inputText.trim()) return;
-    setMemo((prev) => [...prev, inputText]);
-    setInputText('');
-  }
-
-  const deleteMemo = (index: number) => {
-    setMemo((prev)=>prev.filter((_, i) => index !== i));//インデックス番号と一致するもの以外で配列を再定義する
-  }
+  const {
+    inputText,
+    memo,
+    handleInputText,
+    handleMemo,
+    deleteMemo
+  } = useSimpleMemoText();
 
   return (
     <div className='max-w-4xl mx-auto mt-8'>
