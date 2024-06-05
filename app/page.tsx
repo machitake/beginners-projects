@@ -31,6 +31,11 @@ export default function Home() {
           コメント機能
         </button>
       </Link>
+      <Link href="/simple-memo">
+        <button className="border-2 border-black px-3 py-2 rounded-lg bg-red-200">
+          シンプルメモ
+        </button>
+      </Link>
       </div>
     </div>
   );
