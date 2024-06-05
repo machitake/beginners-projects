@@ -1,21 +1,14 @@
 "use client"
 import { NextPage } from 'next'
-import { ChangeEvent, useState } from 'react'
+import { UseCommentText } from './customHooks'
 
 const comment: NextPage = () => {
-  const [inputText, setInputText] = useState("");
-  const [commentList, setCommentList] = useState<string[]>([]);
-
-  const handleInputText = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setInputText(e.target.value);
-  }
-
-  const handleSubmit = () => {
-    //空文字やスペースで送信出来ないようする必要がある
-    if(!inputText.trim()) return //trimは空白やスペースを省く、入力された文字がなければreturn
-    setCommentList((prev)=>[...prev, inputText])//...prevは上書きせずに更新できる
-    setInputText("");//inputのテキストを削除する　双方向バインディングに注意
-  }
+  const {
+    inputText,
+    commentList,
+    handleInputText,
+    handleSubmit,
+  } = UseCommentText();
 
   return (
     <div className='max-w-4xl mx-auto mt-8'>
