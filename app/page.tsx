@@ -22,8 +22,13 @@ export default function Home() {
         </button>
       </Link>
       <Link href="/color-change">
-        <button className="border-2 border-black px-3 py-2 rounded-lg bg-green-200">
+        <button className="border-2 border-black px-3 py-2 rounded-lg bg-indigo-200">
           ランダムカラー
+        </button>
+      </Link>
+      <Link href="/comment">
+        <button className="border-2 border-black px-3 py-2 rounded-lg bg-orange-200">
+          コメント機能
         </button>
       </Link>
       </div>
