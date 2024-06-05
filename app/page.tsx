@@ -36,6 +36,11 @@ export default function Home() {
           シンプルメモ
         </button>
       </Link>
+      <Link href="/simple-todo">
+        <button className="border-2 border-black px-3 py-2 rounded-lg bg-red-200">
+          シンプルTODO
+        </button>
+      </Link>
       </div>
     </div>
   );
