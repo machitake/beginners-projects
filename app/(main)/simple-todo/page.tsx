@@ -1,25 +1,16 @@
 "use client"
 import { NextPage } from 'next'
-import { useRef, useState } from 'react';
+import { useSimpleTodoText } from './custom.Hook';
 
 const SimpleTodo: NextPage = () => {
-  const [todo, setTodo] = useState<{text: string; isComplete: boolean}[]>([]);
-  const textAreaRef = useRef<HTMLTextAreaElement>(null);
 
-  const handelTodo = () => {
-    const textAreaValue = textAreaRef.current?.value;//オプショナル演算時(?)nullの場合もエラーが出ないようにする
-    if(!textAreaValue || !textAreaValue.trim()) return;
-    setTodo((prev) => [...prev, {text: textAreaValue, isComplete: false}]);
-    textAreaRef.current.value = "";
-  }
-
-  const completedTodo = (index: number) => {
-    setTodo((prev) => prev.map((item, i) => i === index ? {...item, isComplete: !item.isComplete} : item))
-  }
-
-  const deleteTodo = (index: number) => {
-    setTodo((prev) => prev.filter((_, i) => i !== index ))
-  }
+  const {
+    todo,
+    textAreaRef,
+    handelTodo,
+    completedTodo,
+    deleteTodo,
+  } = useSimpleTodoText();
 
   return (
     <div className='max-w-4xl mx-auto mt-8'>
