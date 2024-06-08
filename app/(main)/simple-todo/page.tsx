@@ -1,6 +1,6 @@
 "use client"
 import { NextPage } from 'next'
-import { useSimpleTodoText } from './custom.Hook';
+import { useSimpleTodoText } from './customHook';
 
 const SimpleTodo: NextPage = () => {
 
